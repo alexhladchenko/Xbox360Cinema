@@ -1,0 +1,26 @@
+{
+  "movies": [
+    {
+      "id": "tt0111161",
+      "title": "The Shawshank Redemption",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWM3OTFkXkEyXkFqcGc@._V1_.jpg",
+      "video": "",
+      "source": "imdb"
+    },
+    {
+      "id": "tt0068646",
+      "title": "The Godfather",
+      "poster": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00ZjQ5LWFmNTEtODM1ZmRlYWM3OTFkXkEyXkFqcGc@._V1_.jpg",
+      "video": "",
+      "source": "imdb"
+    },
+    {
+      "id": "tt0468569",
+      "title": "The Dark Knight",
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWYwMy00ZjQ5LWFmNTEtODM1ZmRlYWM3OTFkXkEyXkFqcGc@._V1_.jpg",
+      "video": "",
+      "source": "imdb"
+    }
+  ]
+}
+
