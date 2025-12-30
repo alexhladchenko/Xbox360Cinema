@@ -1,0 +1,28 @@
+# rules - локальный файл правил
+ifndef DEVKITXENON
+    $(error Please set DEVKITXENON environment variable)
+endif
+
+PREFIX = $(DEVKITXENON)/bin/xenon-
+CC = $(PREFIX)gcc
+LD = $(PREFIX)ld
+AR = $(PREFIX)ar
+OBJCOPY = $(PREFIX)objcopy
+STRIP = $(PREFIX)strip
+
+INCLUDES = -I$(DEVKITXENON)/usr/include \
+           -I$(DEVKITXENON)/usr/include/xenos \
+           -I$(DEVKITXENON)/usr/include/xenon_soc
+
+CFLAGS = -mcpu=cell -mtune=cell -O2 -Wall -ffreestanding -nostdinc $(INCLUDES)
+LDFLAGS = -L$(DEVKITXENON)/usr/lib -T$(DEVKITXENON)/app.lds -nostdlib
+LIBS = -lxenon -lm -lc
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.elf: %.o
+	$(CC) $(CFLAGS) $< $(LDFLAGS) $(LIBS) -o $@
+
+%.bin: %.elf
+	$(OBJCOPY) -O binary $< $@
